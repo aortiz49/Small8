@@ -48,7 +48,7 @@ begin
 					z_out <= '0';
 				end if;
 ------------------------------------------------------------------------------------------------------        
-      	when F_SBCR =>	
+      		when F_SBCR =>	
 			temp_sum := signed('0'&A)+signed(not('0'&D))+1;
 			temp 	:= temp_sum(alu_width-1 downto 0);
 			c_out 	<= temp_sum(alu_width);                        
