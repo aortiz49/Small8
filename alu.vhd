@@ -5,7 +5,7 @@ use work.small8_lib.all;
 
 entity alu is 
 
-   port ( 
+	port ( 
 		A,D 								: in std_logic_vector(alu_width-1 downto 0);	-- Accumulator reg and Data reg
        	sel 								: in std_logic_vector(3 downto 0);	-- select line
 	   	C									: in std_logic;	-- Carry-in 
