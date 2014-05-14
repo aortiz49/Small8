@@ -6,11 +6,11 @@ use work.small8_lib.all;
 entity alu is 
 
 	port ( 
-		A,D 								: in std_logic_vector(alu_width-1 downto 0);	-- Accumulator reg and Data reg
-       	sel 								: in std_logic_vector(3 downto 0);	-- select line
-	   	C									: in std_logic;	-- Carry-in 
-	    c_out,v_out,s_out,z_out				: out std_logic;	-- status signals
-		output 								: out std_logic_vector(alu_width-1 downto 0)	--output 
+		A,D 			: in std_logic_vector(alu_width-1 downto 0);	-- Accumulator reg and Data reg
+       		sel 			: in std_logic_vector(3 downto 0);	-- select line
+	   	C			: in std_logic;	-- Carry-in 
+		c_out,v_out,s_out,z_out	: out std_logic;	-- status signals
+		output 			: out std_logic_vector(alu_width-1 downto 0)	--output 
     ); 
 end alu; 
 
@@ -48,7 +48,7 @@ begin
 					z_out <= '0';
 				end if;
 ------------------------------------------------------------------------------------------------------        
-      	when F_SBCR =>	
+      		when F_SBCR =>	
 			temp_sum := signed('0'&A)+signed(not('0'&D))+1;
 			temp 	:= temp_sum(alu_width-1 downto 0);
 			c_out 	<= temp_sum(alu_width);                        
